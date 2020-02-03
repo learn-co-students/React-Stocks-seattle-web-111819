@@ -1,13 +1,15 @@
 import React from 'react';
 import Stock from '../components/Stock'
 
-const StockContainer = props => {
+const StockContainer = ({stocks, onClickStock, header}) => {
 
-  const displayStocks = () => props.stocks.map(stock => <Stock key={stock.id} stock={stock} onClickStock={props.onClickStock} />)
+  const displayStocks = () => 
+    // Map through and make Stock components
+    stocks.map(stock => <Stock key={stock.id} stock={stock} onClickStock={onClickStock} />)
 
   return (
     <div>
-      <h2>Stocks</h2>
+      <h2>{header}</h2>
       {displayStocks()}
     </div>
   );

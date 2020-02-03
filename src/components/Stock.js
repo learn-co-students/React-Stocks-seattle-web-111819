@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Stock = props => 
-  <div onClick={() => props.onClickStock(props.stock, props.loc)}>
+const Stock = ({stock, onClickStock}) => 
+  <div onClick={() => onClickStock(stock)}>
     <div className="card">
       <div className="card-body">
-        <h5 className="card-title">{props.stock.name}</h5>
-        <p className="card-text">{props.stock.ticker + ": " + props.stock.price}</p>
+        <h5 className="card-title">{stock.name}</h5>
+        <p className="card-text">{stock.ticker + ": " + stock.price}</p>
       </div>
     </div>
   </div>
